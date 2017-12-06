@@ -1,8 +1,7 @@
 import config
 import telebot
 import brain
-
-# from telebot import types
+from multiprocessing import Pool
 
 bot = telebot.TeleBot(config.token)
 
@@ -23,16 +22,18 @@ def handle_start(message):
 @bot.message_handler(commands=['hard_mode'])
 def log(message):
     bot.send_message(message.chat.id, 'Ублюдок, мать твою, а ну иди сюда!')
-#    bot.register_next_step_handler(, hard_mode)
 
 
 
 @bot.message_handler(content_types=["text"])
 def arithmetic(message):
-
-    #bot.send_message(message.chat.id,
-    #                 simple_arithmetic.Arithmetic((message.text)).simple_arithmetic())
-    eval(brain.Big_father(message.text).grafic())
+    pool=Pool(processes=4)
+    print(message.text)
+    result=pool.apply_async(brain.Big_father, (str(message.text),))
+    try:
+        eval(str(result.get(timeout=1)))
+    except Exception:
+        bot.send_message(message.chat.id, '(X_X)')
 
 
 if __name__ == '__main__':

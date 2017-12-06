@@ -4,6 +4,7 @@ class nuiton():
         self.m = []
 
     def main(self):
+
         self.m = self.string.split('**')
         flag = True
         try:
@@ -34,7 +35,7 @@ class nuiton():
         if flag:# and self.m[0].isalpha() and self.m[1].isalpha():
             k = ''
             t=float
-            print('olol')
+            #print('olol')
             import math
             for i in range(n + 1):
                 t =float(math.factorial(n) / (math.factorial(i) * math.factorial(n - i)))
@@ -43,4 +44,4 @@ class nuiton():
         print(self.m,' ',n)
 
 
-print(nuiton('(x+5)**6').main())
+#print(nuiton('(x+5)**6').main())
