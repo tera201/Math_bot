@@ -6,7 +6,6 @@ class Grafics():
         self.f=string
     def constructor(self):
         lag = 0.01
-        #print(self.f)
         x = arange(-self.n, self.n, lag)
         try:
             y = eval(self.f)
@@ -21,6 +20,4 @@ class Grafics():
 
         plt.grid(True)
 
-        plt.savefig('pic.png')#, format='png')
-        #plt.show()
-#Grafics('x**3').constructor()
+        plt.savefig('pic.png')

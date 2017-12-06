@@ -1,6 +1,6 @@
 import simple_arithmetic
 import test3
-import pascal
+#import pascal
 import binom
 
 class Big_father():
@@ -14,10 +14,10 @@ class Big_father():
             else:
                 return "bot.send_photo(message.chat.id," + "open('pic.png', 'rb')" + ")"
 
-        elif self.string[0:7]=='pascal(':
-            print(self.string[7:-1])
-            self.string = pascal.Triangle(self.string[7:-1]).TP()
-            return "bot.send_message(message.chat.id,'" + str(self.string) + "')"
+      #  elif self.string[0:7]=='pascal(':
+       #     print(self.string[7:-1])
+        #    self.string = pascal.Triangle(self.string[7:-1]).TP()
+         #   return "bot.send_message(message.chat.id,'" + str(self.string) + "')"
 
         elif self.string[0:6]=='binom(':
             self.string = binom.nuiton(self.string[5:]).main()

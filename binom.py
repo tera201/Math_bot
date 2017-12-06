@@ -32,16 +32,12 @@ class nuiton():
             flag = False
             return 'continue'
         print(n)
-        if flag:# and self.m[0].isalpha() and self.m[1].isalpha():
+        if flag:
             k = ''
             t=float
-            #print('olol')
             import math
             for i in range(n + 1):
-                t =float(math.factorial(n) / (math.factorial(i) * math.factorial(n - i)))
+                t =int(math.factorial(n) / (math.factorial(i) * math.factorial(n - i)))
                 k +='+'+ str(t) + self.m[0][1:] + '^' + str(n - i)+'*' + self.m[1][1:] + '^' + str(i)
             return k
         print(self.m,' ',n)
-
-
-#print(nuiton('(x+5)**6').main())

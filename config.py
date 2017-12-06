@@ -11,4 +11,6 @@ help_txt=('доступныее действия simple_mod:\n'
         'facrotials(x) or x!\n'
           'hard_mod:\n'
           'limin(f, variable, point)-предел\n'
-          'diff(f, var, n)-производная var-переменная,n-порядок')
+          'diff(f, var, n)-производная var-переменная,n-порядок\n'
+          'binom(x+y)^n - разложение по биному\n'
+          'y=f(x) - построить график f(x)')

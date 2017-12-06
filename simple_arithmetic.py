@@ -14,7 +14,7 @@ class Arithmetic():
     def remake(self):
         self.string = self.string.lower()
         x = []
-
+# подсчет факториала
         flag = False
         if self.string.find('!') > -1:
             self.m = self.string.split('!')
@@ -35,46 +35,38 @@ class Arithmetic():
                             self.m[i] = self.m[i][0:k]
                             break
             for n in range(len(x)):
-                #try:
-                    #ошибка при ''
-                x[n] = str(factorial(int(x[n])))
-               # except Exception:
-                #    self.string='ты что, ебобо?'
+                if x[n]!='':
+                    x[n] = str(factorial(int(x[n])))
             for n in range(i + 2):
                 if len(x) < n + 1:
                     self.string += self.m[n]
                 else:
                     self.string += self.m[n] + x[n]
 
-
+# замена операций на питоновские
         for n in self.symbol:
             if self.string.find(n) > -1:
                 self.m = self.string.split(n)
                 self.string = ''
-                #print(self.m)
                 for i in range(len(self.m) - 0):
                     if len(self.m)>i+1:
-                        self.string += self.m[i] + self.symbol.get(n)# + self.m[i + 1]
+                        self.string += self.m[i] + self.symbol.get(n)
                     else:
                         self.string +=self.m[i]
-                #print(self.string)
         return self.string
 
     def arithmetic(self):
-        #self.string=Arithmetic(self.string).remake()
-        #print(self.string)
         try:
             return (eval(self.string))
         except ValueError or NameError:
             return ('WTF???')
         except ZeroDivisionError:
-            return ('А ты мозгами думать умеешь? (х_х)')
+            return ('Ты шо ебобо? сейчас бы на ноль делить... (х_х)')
         except OverflowError:
             return ('this is big number, поэтому я тебе его не скажу (0о0)')
         except MemoryError:
             return ('ай, памяти не хватило (=_=)')
         except NameError:
-            return ('Ты тупой? (-_-)')
+            return ('И что ты пытался этим добиться?')
         except Exception:
-            return ('НУ ёбана...')#\n всё поламалося (._.) ( l: ) ( .-. ) ( :l ) (._.)')
-#Arithmetic('X^5+x^4+X^3div5').remake()
+            return ('НУ ёбана...')

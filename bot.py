@@ -1,3 +1,5 @@
+import multiprocessing
+
 import config
 import telebot
 import brain
@@ -27,13 +29,14 @@ def log(message):
 
 @bot.message_handler(content_types=["text"])
 def arithmetic(message):
-    pool=Pool(processes=4)
+    pool=Pool(processes=1)
     print(message.text)
     result=pool.apply_async(brain.Big_father, (str(message.text),))
     try:
         eval(str(result.get(timeout=1)))
-    except Exception:
-        bot.send_message(message.chat.id, '(X_X)')
+    except multiprocessing.context.TimeoutError:
+        crash=open('crash.mp3','rb')
+        bot.send_voice(message.chat.id,crash)
 
 
 if __name__ == '__main__':

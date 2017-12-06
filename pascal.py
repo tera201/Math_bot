@@ -25,3 +25,4 @@ class Triangle():
         else:
             self.k = 'ты блять в скобочках цыфру даже написать не могешь?'
             return  self.k
+print(Triangle(6).TP())
