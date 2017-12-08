@@ -57,7 +57,11 @@ class Arithmetic():
 
     def arithmetic(self):
         try:
-            return (eval(self.string))
+            if len(self.string)<=3400:
+                return (eval(self.string))
+            else:
+                self.string='слишкоом много символов'
+                return self.string
         except ValueError or NameError:
             return ('WTF???')
         except ZeroDivisionError:

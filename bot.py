@@ -20,13 +20,6 @@ def handle_start(message):
     pass
 
 
-
-@bot.message_handler(commands=['hard_mode'])
-def log(message):
-    bot.send_message(message.chat.id, 'Ублюдок, мать твою, а ну иди сюда!')
-
-
-
 @bot.message_handler(content_types=["text"])
 def arithmetic(message):
     pool=Pool(processes=1)

@@ -27,4 +27,5 @@ class Big_father():
         else:
             self.string=simple_arithmetic.Arithmetic(self.string).arithmetic()
             return "bot.send_message(message.chat.id,'"+ str(self.string) + "')"
+        print(len(str(self.string)))
 
