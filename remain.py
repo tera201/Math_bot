@@ -11,7 +11,7 @@ class Arithmetic():
         self.symbol = {'mod': '%', 'div': '//', '^': '**', '×': '*', '÷': '/'}
         self.m = []
 
-    def remake(self):
+    def remake_in(self):
         self.string = self.string.lower()
         x = []
 # подсчет факториала
@@ -66,11 +66,9 @@ class Arithmetic():
             return ('WTF???')
         except ZeroDivisionError:
             return ('Ты шо ебобо? сейчас бы на ноль делить... (х_х)')
-        except OverflowError:
-            return ('this is big number, поэтому я тебе его не скажу (0о0)')
         except MemoryError:
             return ('ай, памяти не хватило (=_=)')
         except NameError:
-            return ('И что ты пытался этим добиться?')
+            return ('И чего ты пытался этим добиться?')
         except Exception:
-            return ('НУ ёбана...')
+            return ('Что то идет не по плану...')
